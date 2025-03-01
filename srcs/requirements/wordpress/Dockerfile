@@ -1,25 +1,3 @@
-# FROM debian:bullseye
-
-# RUN apt update && apt install -y \
-# 	wget \
-# 	curl \
-# 	sendmail \
-# 	php-mysql \
-# 	php-mysqli \
-# 	mariadb-client \
-# 	php \
-# 	php-fpm
-
-# COPY ./tools/docker_entry.sh /usr/local/bin/
-
-# COPY ./tools/wp-config.php /
-
-# # Ensure the entry script is executable
-# RUN chmod +x /usr/local/bin/docker_entry.sh
-
-# # Set entrypoint
-# ENTRYPOINT ["/usr/local/bin/docker_entry.sh"]
-
 FROM debian:bullseye
 
 # Update and install necessary packages
@@ -36,7 +14,6 @@ RUN apt update && apt install -y \
 
 # Copy necessary files
 COPY ./tools/docker_entry.sh /usr/local/bin/
-COPY ./tools/wp-config.php /
 
 # Ensure the entry script is executable
 RUN chmod +x /usr/local/bin/docker_entry.sh

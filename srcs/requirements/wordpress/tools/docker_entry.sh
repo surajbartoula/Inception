@@ -14,8 +14,7 @@ mv wp-cli.phar /usr/local/bin/wp
 
 # Download and configure WordPress
 wp core download --allow-root
-rm -f /var/www/html/wp-config-sample.php
-cp /wp-config.php /var/www/html/wp-config.php
+wp config create --path=$WP_ROUTE --allow-root --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=$DB_HOST --dbprefix=wp_
 
 # Install WordPress
 wp core install --url=$DOMAIN_NAME/ --title="$WP_TITLE" \
