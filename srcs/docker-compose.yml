@@ -55,11 +55,11 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/${USER}/data/wordpress'
+      device: '/home/sbartoul/data/wordpress'
   mariadb:
     name: mariadb
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/${USER}/data/mariadb'
+      device: '/home/sbartoul/data/mariadb'
